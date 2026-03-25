@@ -1,0 +1,27 @@
+name: 🧠 CI/CD Ghost Drone
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+
+jobs:
+  ai-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Setup Node.js (V8)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          
+      - name: Install Local Brain
+        run: npm ci
+        
+      - name: Boot Headless Swarm
+        run: node src/scripts/ci-drone.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

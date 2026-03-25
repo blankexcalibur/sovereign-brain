@@ -1,0 +1,29 @@
+# Dev & CI
+.github/
+.husky/
+.vscode/
+.memory-brain/
+.env
+.env.*
+!.env.example
+
+# Tests
+src/tests/
+jest.config.js
+*.test.js
+
+# Build artifacts
+*.vsix
+.daemon_token
+brain.db
+brain.db-wal
+brain.db-shm
+*.log
+
+# Dev tools
+nodemon.json
+.eslintrc*
+.prettierrc*
+
+# Docs (README is included by default)
+docs/
