@@ -130,6 +130,15 @@ async function cmdAdd(args) {
     console.log(`  ${dimText('Summary:')} ${memory.summary}`);
     console.log(`  ${dimText('Tags:')} ${(memory.tags || []).join(', ')}`);
     console.log(`  ${dimText('Importance:')} ${Number(memory.importance).toFixed(2)}`);
+
+    if (memory.conflicts && memory.conflicts.length > 0) {
+      console.log(`\n${colors.red}${colors.bold}⚠️  CONFLICT WARNING ⚠️${colors.reset}`);
+      console.log(`High similarity to recently added memories from other sources:`);
+      for (const c of memory.conflicts) {
+        console.log(`  ${colors.yellow}→ [Similarity: ${c.similarity}]${colors.reset} ${c.existingSummary}`);
+        console.log(`    ${dimText('Resolution:')} ${c.resolution}`);
+      }
+    }
   }
 }
 
