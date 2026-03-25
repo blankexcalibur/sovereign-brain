@@ -9,9 +9,9 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cognitive-systems/sovereign-brain"
+    "url": "https://github.com/blankexcalibur/sovereign-brain"
   },
-  "homepage": "https://github.com/cognitive-systems/sovereign-brain#readme",
+  "homepage": "https://github.com/blankexcalibur/sovereign-brain#readme",
   "files": [
     "index.js",
     "src/brain/",
