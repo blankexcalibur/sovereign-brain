@@ -67,6 +67,12 @@ else if (command === 'install-claude') {
   console.log('   • find_duplicates — Detect code duplication');
 }
 
+// ── Route: CLI Commands ────────────────────────────────────────
+else if (['add', 'search', 'context', 'insights', 'link', 'export', 'stats', 'backup', 'debug', 'ingest-git', 'ingest-repo', 'digest', 'doctor', '--help', '-h', '--version', '-v', '-V'].includes(command)) {
+  // We don't want to boot the daemon for CLI one-offs, we just execute the CLI module
+  await import('./src/brain/cli.js');
+}
+
 // ── Route: Default — Boot the Daemon ─────────────────────────
 else {
   const brainDir = path.join(process.cwd(), '.memory-brain');
