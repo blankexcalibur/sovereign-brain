@@ -1,6 +1,6 @@
 {
   "name": "sovereign-brain",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Shared memory layer for AI coding agents. One brain, every tool. MCP-native.",
   "main": "index.js",
   "bin": {
